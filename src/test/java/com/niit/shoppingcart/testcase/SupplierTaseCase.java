@@ -38,9 +38,9 @@ public class SupplierTaseCase {
 
 	@Test
 	public void createsupplierTestCase() {
-		supplier.setid("02");
-		supplier.setname("Akshat Thakur");
-		supplier.setaddress("Rewa , India");
+		supplier.setid("SP03");
+		supplier.setname("Kumar Sa");
+		supplier.setaddress("Rewa ,India");
 
 		boolean f = supplierDAO.save(supplier);
 

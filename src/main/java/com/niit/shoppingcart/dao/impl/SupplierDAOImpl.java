@@ -63,4 +63,9 @@ public class SupplierDAOImpl implements SupplierDAO {
 		return null;
 	}
 
+	public Supplier getSupplierByName(String getname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

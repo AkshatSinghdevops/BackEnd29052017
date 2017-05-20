@@ -13,6 +13,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.filter.DelegatingFilterProxy;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.niit.shoppingcart.domain.Category;
 import com.niit.shoppingcart.domain.Product;
@@ -109,6 +111,22 @@ public class ApplicationContextConfig {
 		return transactionManager;
 	}
 
+	
+	 @Bean(name = "multipartResolver")
+	    public CommonsMultipartResolver multipartResolver() {
+	        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+	         
+	        // Set Max Size...
+	        // commonsMultipartResolver.setMaxUploadSize(...);
+	         
+	        return commonsMultipartResolver;
+	    }
+@Bean(name="springSecurityFilterChain")
+public DelegatingFilterProxy getFilterChainProxy()
+{
+	   DelegatingFilterProxy obj= new DelegatingFilterProxy();
+	   return obj;
+}
 	
 
 }

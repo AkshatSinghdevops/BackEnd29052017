@@ -1,5 +1,6 @@
 package com.niit.shoppingcart.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name="Product_Details")  //if the class name and table name is different
+@Table(name="Product")  //if the class name and table name is different
 @Component
 public class Product {
 	
@@ -20,6 +21,14 @@ public class Product {
 	
 	
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	private String name;
 	
 	private String price;
@@ -59,9 +68,10 @@ public class Product {
 	private String  supplier_id;
 	
 	@Transient
-	private MultipartFile image;
+	private MultipartFile file;
 	
 	
+
 	@ManyToOne
 	@JoinColumn(name = "category_id", updatable = false, insertable = false, nullable = false)
 	private Category category;
@@ -73,12 +83,15 @@ public class Product {
 	
 	
 
-	public String getId() {
-		return id;
+	
+
+	
+	public MultipartFile getFile() {
+		return file;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 	public String getName() {
@@ -117,13 +130,7 @@ public class Product {
 		supplier_id = supplier_id;
 	}
 
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
+	
 
 	public Category getCategory() {
 		return category;
@@ -140,6 +147,8 @@ public class Product {
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
+
+	
 
 	
 	

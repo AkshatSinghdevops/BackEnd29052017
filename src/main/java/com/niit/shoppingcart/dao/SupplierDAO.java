@@ -29,4 +29,6 @@ public interface SupplierDAO {
 
 	public Supplier get(String id);
 
+	public Supplier getSupplierByName(String getname);
+
 }
