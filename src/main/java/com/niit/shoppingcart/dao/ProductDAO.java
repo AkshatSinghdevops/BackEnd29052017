@@ -26,9 +26,32 @@ public interface ProductDAO {
 
 	public boolean delete(Product product);
 
-	public Product get(String id);
+	//public Product get(String id);
 
 	public boolean saveOrUpdate(Product product);
+	
+	
+public Product getProductById(String id);
+	
+	//get all products pertaining to particular category
+	public List<Product> getAllProductsByCategoryId(String categoryId);
+	public List<Product> getAllProductsBySupplierId(String supplierId);
+	
+	public Product getProductByName(String name);
+
+	public Product get(String id);
+
+	public List<Product> getSimilarProducts(String search_string);
+	
+	
+	
+	
+	//====================================================
+	
+
+	
+	
+	
 	
 
 }

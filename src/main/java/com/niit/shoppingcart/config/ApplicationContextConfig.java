@@ -17,6 +17,7 @@ import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.niit.shoppingcart.domain.Category;
+import com.niit.shoppingcart.domain.Mycart;
 import com.niit.shoppingcart.domain.Product;
 import com.niit.shoppingcart.domain.Supplier;
 import com.niit.shoppingcart.domain.User;
@@ -99,6 +100,7 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(Mycart.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 
@@ -121,12 +123,12 @@ public class ApplicationContextConfig {
 	         
 	        return commonsMultipartResolver;
 	    }
-@Bean(name="springSecurityFilterChain")
+/*@Bean(name="springSecurityFilterChain")
 public DelegatingFilterProxy getFilterChainProxy()
 {
 	   DelegatingFilterProxy obj= new DelegatingFilterProxy();
 	   return obj;
-}
+}*/
 	
 
 }

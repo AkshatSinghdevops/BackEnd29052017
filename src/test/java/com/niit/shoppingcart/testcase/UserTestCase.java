@@ -49,21 +49,21 @@ public class UserTestCase {
 	//}
 	
 	@Test
-	public void createCategoryTestCase() {
-		user.setId("niit");                   // niit and 123 admin
+	public void createUserTestCase() {
+		user.setId("akshat");                   // niit and 123 admin
 		                                          // akshat akshat user
-		user.setPassword("niit");
-		user.setName("niit");
-		user.setMail("niit@gmail.com");
-		user.setContact("12121212");
-		user.setRole("ROLE_ADMIN");
+		user.setPassword("akshat");
+		user.setName("akshat");
+		user.setMail("akshat@gmail.com");
+		user.setContact("1299992");
+		user.setRole("ROLE_USER");
 
 		boolean flag = userDAO.save(user);
 
 		// compare what you are excepting VS what you are getting from save
 		// method
 
-		Assert.assertEquals("createCategoryTestCase", true, flag);
+		Assert.assertEquals("createUserTestCase", true, flag);
 
 	}
 	

@@ -35,10 +35,30 @@ public interface CategoryDAO {
 	public Category getCategoryByID(String id);
 
 	// get category by name
-	public Category getCategoryByName(String name);
+	
 
 	public Category get(String id);
 
 	public boolean saveOrUpdate(Category category);
+	
+	//public Category getCategoryByName(String name);
+//public boolean save(Category category);
+	
+	//update category
+	//public boolean update(Category category);
+	
+	
+	//get all categories
+	//public List<Category> list();
+	
+	//get category by id
+	public Category getCategoryById(String id);
+	
+	//delete category
+	//public boolean delete(String id);
+	
+
+	//get category by id
+	public Category getCategoryByName(String name);
 
 }

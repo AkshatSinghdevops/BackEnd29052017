@@ -66,7 +66,7 @@ public class Category {
 		  @OneToMany(mappedBy="category",fetch = FetchType.EAGER)	
 	    	private Set<Product> products;
 
-	  
+		
 		public Set<Product> getProducts() {
 			return products;
 		}
