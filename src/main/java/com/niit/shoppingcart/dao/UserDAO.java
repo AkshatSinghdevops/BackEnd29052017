@@ -21,5 +21,7 @@ public interface UserDAO {
 	public boolean validate(String id , String password);
 
 	public User getUser(String id);
+	
+	public User getName(String name);
 	 
 }

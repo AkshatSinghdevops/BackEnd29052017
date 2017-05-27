@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Entity
+@Entity(name="User")
 @Table(name="User_Details")  //if the class name and table name is different
 @Component
 public class User {

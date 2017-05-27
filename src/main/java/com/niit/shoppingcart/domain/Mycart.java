@@ -1,7 +1,9 @@
 package com.niit.shoppingcart.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="Mycart")
 @Component
-public class Mycart {
+public class Mycart implements Serializable {
 	
 	private static  final long serialVersionUID = 1L;
 	
@@ -22,28 +24,33 @@ public class Mycart {
 	//@GeneratedValue(strategy=GenerationType.AUTO)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_1")
 	@SequenceGenerator(name="seq_1", sequenceName="seq_1", allocationSize=1)
-	private long id;
+	@Column(name="id")
+	private Long id;
 	
 	
 	private String product_name;
 	
 	private String user_id;
 	
-	private String price;
+	private int price;
 	
 	private char status;
 	
-	private String quantity;
+	private int quantity;
 	
 	private Date date_added;
 
-	
-
-	public long getId() {
+	/*@Override
+	public String toString() {
+		return "MyCart [id=" + id + ", user_id=" + user_id + ", price=" + price + ", product_name=" + product_name
+				+ ", status=" + status + ", quantity=" + quantity + ", date_added=" + date_added + "]";
+	}
+*/
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -63,11 +70,11 @@ public class Mycart {
 		this.user_id = user_id;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
@@ -79,11 +86,11 @@ public class Mycart {
 		this.status = status;
 	}
 
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
@@ -95,7 +102,7 @@ public class Mycart {
 		this.date_added = date_added;
 	}
 
-	public static long getSerialVersionUID() {
+	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 

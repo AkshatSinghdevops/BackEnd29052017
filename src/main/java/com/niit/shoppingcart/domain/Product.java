@@ -24,7 +24,7 @@ public class Product implements Serializable{
 	@Column(name="description")  //if the name of field in db
 				// and property name in Domain object is different
 	private String description;
-	private String price;
+	private int price;
 	
 	private String category_id;  ///1
 	
@@ -109,14 +109,15 @@ public class Product implements Serializable{
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-    
+
+	
     
     
 

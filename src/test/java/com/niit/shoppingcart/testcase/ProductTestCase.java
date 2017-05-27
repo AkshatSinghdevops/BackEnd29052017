@@ -34,10 +34,10 @@ public class ProductTestCase {
 	@Test
 	public void createProductTestCase() {
 		
-		product.setId("PD003");
+		product.setId("PD9");
 		product.setDescription("kk");
-		product.setName("Computer");
-		product.setPrice("55555");
+		product.setName("Laptop");
+		product.setPrice(55555);
 		product.setSupplier_id("SP01");
 		product.setCategory_id("CG19052017");
 		

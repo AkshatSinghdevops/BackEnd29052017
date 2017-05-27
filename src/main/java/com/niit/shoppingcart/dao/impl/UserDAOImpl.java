@@ -85,6 +85,12 @@ private SessionFactory sessionFactory;
 		}
 		return true;
 	}
+
+
+	public User getName(String name) {
+		// TODO Auto-generated method stub
+		return  (User)getSession().get(User.class, name);
+	}
 	
 
 

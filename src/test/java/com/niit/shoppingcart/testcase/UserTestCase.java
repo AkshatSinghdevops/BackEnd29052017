@@ -50,12 +50,12 @@ public class UserTestCase {
 	
 	@Test
 	public void createUserTestCase() {
-		user.setId("akshat");                   // niit and 123 admin
+		user.setId("ravi");                   // niit and 123 admin
 		                                          // akshat akshat user
-		user.setPassword("akshat");
-		user.setName("akshat");
-		user.setMail("akshat@gmail.com");
-		user.setContact("1299992");
+		user.setPassword("ravi");
+		user.setName("ravi");
+		user.setMail("ravi@gmail.com");
+		user.setContact("449992");
 		user.setRole("ROLE_USER");
 
 		boolean flag = userDAO.save(user);

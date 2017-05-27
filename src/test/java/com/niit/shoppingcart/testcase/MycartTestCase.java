@@ -34,20 +34,13 @@ public class MycartTestCase {
 	
 	
 	@Test
-	public void createMycartTestCase() {
-		mycart.setId(1);
-		mycart.setProduct_name("mobile");
-		mycart.setPrice("1000");
-		mycart.setQuantity("1");
-		mycart.setUser_id("akshat");
-		
-		boolean f = mycartDAO.save(mycart);
+	public void deleteByCartTestCase() {
 
-		// compare what you are excepting VS what you are getting from save
-		// method
+		mycart.setId(48L);
 
-		Assert.assertEquals("createMycartTestCase", true, f);
-		
+		boolean flag = mycartDAO.delete(mycart);
+		assertEquals("deleteByCartTestCase", true, flag);
+
 	}
 
 }
