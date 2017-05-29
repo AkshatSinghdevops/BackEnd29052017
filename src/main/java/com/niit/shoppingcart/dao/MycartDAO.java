@@ -48,11 +48,13 @@ public List<Mycart>	list(String userId);
 	public boolean update(Mycart myCart);
 	
 	
-	public Long getTotalAmount(String id);
+	public int getTotalAmount(Integer integer);
 	
 	
-	public boolean delete(Long id);
+	public boolean delete(int id);
 	
-	public Mycart getMycartByID(Long id);
+	public Mycart getMycartByID(int id);
+
+	public Object getTotalAmount(String id);
 
 	}

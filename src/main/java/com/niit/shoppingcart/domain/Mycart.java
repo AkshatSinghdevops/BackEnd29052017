@@ -18,14 +18,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Mycart implements Serializable {
 	
-	private static  final long serialVersionUID = 1L;
+	private static  final int serialVersionUID = 1;
 	
 	@Id
 	//@GeneratedValue(strategy=GenerationType.AUTO)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_1")
-	@SequenceGenerator(name="seq_1", sequenceName="seq_1", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq_2")
+	@SequenceGenerator(name="seq_2", sequenceName="seq_2", allocationSize=1)
 	@Column(name="id")
-	private Long id;
+	private int id;
 	
 	
 	private String product_name;
@@ -46,11 +46,11 @@ public class Mycart implements Serializable {
 				+ ", status=" + status + ", quantity=" + quantity + ", date_added=" + date_added + "]";
 	}
 */
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -102,7 +102,7 @@ public class Mycart implements Serializable {
 		this.date_added = date_added;
 	}
 
-	public static long getSerialversionuid() {
+	public static int getSerialversionuid() {
 		return serialVersionUID;
 	}
 

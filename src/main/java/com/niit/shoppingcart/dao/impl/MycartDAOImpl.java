@@ -68,7 +68,7 @@ public class MycartDAOImpl implements MycartDAO {
 	public boolean save(Mycart myCart) {
 		//log.debug("Starting of the method save");
 
-		myCart.setId(getMaxId());
+		myCart.setId((int) getMaxId());
 		
 		try {
 			sessionFactory.getCurrentSession().save(myCart);
@@ -112,40 +112,40 @@ public class MycartDAOImpl implements MycartDAO {
 	}
 
 	@Transactional
-	public Long getTotalAmount(String userId) {
+	public int getTotalAmount(int i) {
 		
 	//	log.debug("Starting of the method getTotalAmount");
 		
-		String hql = "select sum(price*quantity) from Mycart where user_id=" + "'" + userId + "' " + "  and status = " + "'N'";
+		String hql = "select sum(price*quantity) from Mycart where user_id=" + "'" + i + "' " + "  and status = " + "'N'";
 		//log.debug("hql" + hql);
 
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		//log.debug("Ending of the method getTotalAmount");
-		return (Long) query.uniqueResult();
+		return   (Integer) query.uniqueResult();
 
 	}
 
 	@Transactional
-	private Long getMaxId() {
+	private int getMaxId() {
 		//log.debug("->->Starting of the method getMaxId");
 
-		Long maxID = 100L;
+		Object maxID = 100;
 		try {
 			String hql = "select max(id) from Mycart";
 			Query query = sessionFactory.getCurrentSession().createQuery(hql);
 			//log.debug("hql" + hql);
-			maxID = (Long) query.uniqueResult();
+			maxID =     query.uniqueResult();
 		} catch (HibernateException e) {
 			//log.debug("It seems this is first record. setting initial id is 100 :");
-			maxID = 100L;
+			maxID = (int) 100;
 			e.printStackTrace();
 		}
 		//log.debug("Max id :" + maxID);
-		return maxID + 1;
+		return     (Integer) maxID ;
 
 	}
 
-	public boolean delete(Long id) {
+	public boolean delete(int id) {
 		try {
 			sessionFactory.getCurrentSession().delete(getMycartByID(id));
 			return true;
@@ -157,8 +157,26 @@ public class MycartDAOImpl implements MycartDAO {
 		}
 	}
 
-	public Mycart getMycartByID(Long id) {
+	public Mycart getMycartByID(int id) {
 		return (Mycart) sessionFactory.getCurrentSession().get(Mycart.class , id);
+	}
+
+	public int getTotalAmount(Integer integer) {
+		String hql = "select sum(price*quantity) from Mycart where user_id=" + "'" + integer + "' " + "  and status = " + "'N'";
+		//log.debug("hql" + hql);
+
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		//log.debug("Ending of the method getTotalAmount");
+		return   (Integer) query.uniqueResult();
+	}
+
+	public Object getTotalAmount(String id) {
+		String hql = "select sum(price*quantity) from Mycart where user_id=" + "'" + id + "' " + "  and status = " + "'N'";
+		//log.debug("hql" + hql);
+
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		//log.debug("Ending of the method getTotalAmount");
+		return    query.uniqueResult();
 	}
 	
 	

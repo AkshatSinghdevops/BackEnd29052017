@@ -36,7 +36,7 @@ public class MycartTestCase {
 	@Test
 	public void deleteByCartTestCase() {
 
-		mycart.setId(48L);
+		mycart.setId(48);
 
 		boolean flag = mycartDAO.delete(mycart);
 		assertEquals("deleteByCartTestCase", true, flag);
